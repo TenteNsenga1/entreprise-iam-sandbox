@@ -54,7 +54,7 @@ markdown# 🔒 Enterprise Identity \& Access Management (IAM) Sandbox
 
 
 
-!\[User Registry Panel](user-registry.png)
+!\[User Registry Panel](user-registry.png.png)
 
 
 
@@ -62,9 +62,9 @@ markdown# 🔒 Enterprise Identity \& Access Management (IAM) Sandbox
 
 &#x20; 
 
-!\[Role Hierarchy Dashboard](role-hierarchy.png)
+!\[Role Hierarchy Dashboard](role-hierarchy.png.png)
 
-!\[Administrative Role Mapping UI](role-mapping.png)
+!\[Administrative Role Mapping UI](role-mapping.png.png)
 
 
 
