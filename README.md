@@ -1,2 +1,76 @@
-Enterprise Identity \& Access Management (IAM) Lab SimulationProject OverviewThis project showcases a local, production-ready implementation of an Identity and Access Management (IAM) infrastructure. Built using open-source enterprise tools, this lab simulates corporate identity governance, user lifecycle management, and role-based security compliance.The architecture and workflows engineered in this lab directly replicate corporate identity environments like Microsoft Entra ID (Azure AD) and Active Directory, making the core concepts highly transferable to enterprise Microsoft 365 ecosystems.Technical StackIdentity Provider: Keycloak (v26.0)Deployment/Runtime: Docker (WSL 2 Engine on Windows 11)Administration \& Testing: PowerShell, Google AuthenticatorImplemented Workflows \& Core Features1. Enterprise Tenant Isolation (Realm Architecture)Designed and deployed a dedicated corporate workspace partition named Indero-Clinical-Lab.Implemented multi-tenancy isolation best practices to separate high-security clinical research environments from standard corporate directories.2. Granular Role-Based Access Control (RBAC)To enforce the Principle of Least Privilege (PoLP) and adhere to strict regulatory compliance standards (Health Canada / FDA electronic record security), a strict role hierarchy was created:Clinical-Admin: Granted full administrative mapping rights over users and application integrations.Medical-Reviewer: Restriced role scoped strictly for verifying clinical trial metrics.Helpdesk-Tech: Tiered operational role designed to troubleshoot accounts without accessing sensitive data.3. Granular Administrative Delegation (Composite Mapping)Avoided dangerous "Global Admin / Superuser" blanket permissions.Mapped precise internal micro-permissions (manage-users, view-users, and manage-clients) from the realm-management tier to the Clinical-Admin role, proving understanding of operational segregation of duties.4. Secure User Provisioning \& Lifecycle OperationsSuccessfully simulated an IT Helpdesk onboarding pipeline by provisioning the test entity james.smith.Applied defensive identity controls by establishing a Mandatory Temporary Password Policy, forcing the end-user to execute a mandatory password reset on their very first authentication handshake.
+markdown# 🔒 Enterprise Identity \& Access Management (IAM) Sandbox
+
+
+
+\*\*Project Overview:\*\* A local, containerized Identity Provider (IdP) sandbox simulating enterprise identity governance, user lifecycle management, and security compliance. Engineered as an open-source equivalent to practice \*\*Microsoft Entra ID (Azure AD)\*\* and \*\*M365 administration\*\* workflows.
+
+
+
+\---
+
+
+
+\### 🛠️ Core Infrastructure Stack
+
+\* \*\*Identity \& Access Management:\*\* Keycloak (v26.0)
+
+\* \*\*Containerization \& Runtime:\*\* Docker Engine (WSL 2 on Windows 11)
+
+\* \*\*Automation \& Scripting:\*\* PowerShell
+
+
+
+\---
+
+
+
+\### 💼 Technical Skill Mapping (M365 / Entra ID Equivalent)
+
+
+
+| Implemented Keycloak Feature | Microsoft 365 / Entra ID Equivalent | Business \& Security Value |
+
+| :--- | :--- | :--- |
+
+| \*\*Custom Corporate Realm\*\* | Dedicated Entra ID Tenant | Complete data and directory isolation. |
+
+| \*\*Role Hierarchy (`Helpdesk-Tech`)\*\* | Entra ID Security Groups \& RBAC | Enforces the Principle of Least Privilege. |
+
+| \*\*`realm-management` Client Mapping\*\* | Granular Administrative Delegation | Prevents dangerous global root/superuser access. |
+
+| \*\*Mandatory User Login Action\*\* | Self-Service Password Reset (SSPR) | Forces onboarding password lifecycle updates. |
+
+
+
+\---
+
+
+
+\### 📂 Key Lab Accomplishments
+
+
+
+\* \*\*User Lifecycle Control:\*\* Provisioned and managed secure employee profiles (`james.smith`) matching enterprise helpdesk provisioning cycles.
+
+\* \*\*Access Control Realization:\*\* Designed granular client roles (`manage-users`, `view-users`) to guarantee strict data segregation, aligning directly with \*\*Health Canada \& FDA compliance criteria\*\* for clinical systems.
+
+\* \*\*Defensive Identity Policies:\*\* Configured temporary credential enforcement to block credential sniffing and ensure account ownership handover security.
+
+
+
+\---
+
+
+
+\## 🚀 How to Run the Environment
+
+To instantly pull and deploy this isolated development sandbox, execute the following command in PowerShell:
+
+
+
+```powershell
+
+docker run -d --name keycloak-sandbox -p 8080:8080 -e KEYCLOAK\_ADMIN=admin -e KEYCLOAK\_ADMIN\_PASSWORD=admin quay.io/keycloak/keycloak:26.0 start-dev
+
+```
 
