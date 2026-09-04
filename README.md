@@ -52,7 +52,21 @@ markdown# 🔒 Enterprise Identity \& Access Management (IAM) Sandbox
 
 \* \*\*User Lifecycle Control:\*\* Provisioned and managed secure employee profiles (`james.smith`) matching enterprise helpdesk provisioning cycles.
 
+
+
+!\[User Registry Panel](user-registry.png)
+
+
+
 \* \*\*Access Control Realization:\*\* Designed granular client roles (`manage-users`, `view-users`) to guarantee strict data segregation, aligning directly with \*\*Health Canada \& FDA compliance criteria\*\* for clinical systems.
+
+&#x20; 
+
+!\[Role Hierarchy Dashboard](role-hierarchy.png)
+
+!\[Administrative Role Mapping UI](role-mapping.png)
+
+
 
 \* \*\*Defensive Identity Policies:\*\* Configured temporary credential enforcement to block credential sniffing and ensure account ownership handover security.
 
